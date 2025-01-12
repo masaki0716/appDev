@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>単語暗記アプリ</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+    #word-card {
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin: 20px auto;
+      width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>単語暗記アプリ</h1>
+  <div id="word-card">
+    <p id="question">単語を表示します</p>
+    <p id="answer" style="display: none;">意味を表示します</p>
+    <button onclick="showAnswer()">答えを表示</button>
+    <button onclick="nextWord()">次の単語</button>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
