@@ -1,6 +1,6 @@
 // 単語リスト（例）
 const words = [
-    { question: "apple", answer: "りんご" },
+    { question: "apple", answer: "りんごですよねえ" },
     { question: "banana", answer: "バナナ" },
     { question: "grape", answer: "ぶどう" },
   ];
