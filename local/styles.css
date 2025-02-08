@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* タブ（シート切り替えボタン）のスタイル */
+.tab-container {
+    display: flex;
+    border-bottom: 2px solid white;
+}
+
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;  /* 枠線をなくす */
+    outline: none; /* クリック時の枠線をなくす */
+    box-shadow: none; /* 影を削除 */
+    background-color: #f1f1f1;
+    transition: background-color 0.3s;
+}
+
+.tab:hover {
+    background-color: #ddd;
+}
+
+.tab.active {
+    background-color: white;
+    font-weight: bold;
+    border-top: 2px solid blue;
+}
+
+/* シート（コンテンツ）のスタイル */
+.sheet {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: white;
+}
+
+/* アクティブなシートを表示 */
+.sheet.active {
+    display: block;
+}

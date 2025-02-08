@@ -2,16 +2,34 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width", initial-scale="1.0">
-    <title>AI単語帳</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTMLでExcel風のシート切り替え</title>
+    <link rel="stylesheet" href="styles.css"> 
 </head>
 <body>
-    <h1>AI搭載型単語帳</h1>
-    <label for="textInput">テキストを入力:</label>
-    <input type="text" id="textBox" placeholder="文字を入力">
-    <button onclick="showText()">送信</button>
 
-    <p id="result"></p>
+    <div class="tab-container">
+        <button class="tab active" onclick="switchSheet(0)">シート1</button>
+        <button class="tab" onclick="switchSheet(1)">シート2</button>
+        <button class="tab" onclick="switchSheet(2)">シート3</button>
+    </div>
+
+    <div id="sheet1" class="sheet active">
+        <h2>シート1の内容</h2>
+        <p>ここにシート1の情報が入ります。</p>
+    </div>
+
+    <div id="sheet2" class="sheet">
+        <h2>シート2の内容</h2>
+        <p>ここにシート2の情報が入ります。</p>
+    </div>
+
+    <div id="sheet3" class="sheet">
+        <h2>シート3の内容</h2>
+        <p>ここにシート3の情報が入ります。</p>
+    </div>
 
     <script src="otherjs.js"></script>
+
 </body>
+</html>
