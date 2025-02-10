@@ -10,3 +10,14 @@ function switchSheet(index) {
     tabs[index].classList.add("active");
     sheets[index].classList.add("active");
 }
+function displayText() {
+    let inputText = document.getElementById("単語").value;
+    let outputDiv = document.getElementById("出力");
+
+    if (inputText.trim() !== "") { // 空白を防ぐ
+        let newParagraph = document.createElement("p");
+        newParagraph.textContent = inputText;
+        outputDiv.appendChild(newParagraph); // 追加
+        document.getElementById("単語").value = ""; // 入力欄をクリア
+    }
+}
