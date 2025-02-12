@@ -22,7 +22,7 @@ function displayText() {
     }
 }
 
-const API_KEY = "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"; // 取得済みのAPIキーをセット
+const API_KEY = ""; // 取得済みのAPIキーをセット
 
 async function askChatGPT(question) {
     const url = "https://api.openai.com/v1/chat/completions";
