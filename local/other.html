@@ -5,6 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTMLでExcel風のシート切り替え</title>
     <link rel="stylesheet" href="styles.css"> 
+    <style>
+        .tab-container {
+            margin-bottom: 10px;
+        }
+        .tab {
+            margin-right: 5px;
+        }
+        .tab.active {
+            font-weight: bold;
+        }
+        .sheet {
+            display: none;
+        }
+        .sheet.active {
+            display: block;
+        }
+        #sheet-container {
+            margin-top: 20px;
+        }
+        .delete-btn {
+            margin-left: 10px;
+            color: red;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
 
@@ -12,27 +37,88 @@
         <button class="tab active" onclick="switchSheet(0)">シート1</button>
         <button class="tab" onclick="switchSheet(1)">シート2</button>
         <button class="tab" onclick="switchSheet(2)">シート3</button>
+        <button class="tab" onclick="addSheet()">+</button> <!-- シート追加ボタン -->
     </div>
 
-    <div id="sheet1" class="sheet active">
-        <h2>問題</h2>
-        <input type="text" id="単語" placeholder="テキストを入力">
-        <button onclick="displayText()">表示</button>
-        <div id="出力"></div>
-    </div>
+    <div id="sheet-container">
+        <div id="sheet1" class="sheet active">
+            <h2>問題はーじまーるよ</h2>
+            <input type="text" id="単語" placeholder="テキストを入力">
+            <button onclick="displayText()">表示</button>
+            <div id="出力"></div>
+        </div>
     
+        <div id="sheet2" class="sheet">
+            <h2>シート2の内容</h2>
+            <input type="text" id="単語AI" placeholder="テキストAIを入力">
+            <button onclick="displayTextAI()">表示</button>
+            <div id="出力AI"></div>
+        </div>
 
-    <div id="sheet2" class="sheet">
-        <h2>シート2の内容</h2>
-        <p>ここにシート2の情報が入ります。</p>
-    </div>
-
-    <div id="sheet3" class="sheet">
-        <h2>シート3の内容</h2>
-        <p>ここにシート3の情報が入ります。</p>
+        <div id="sheet3" class="sheet">
+            <h2>シート3の内容</h2>
+            <p>ここにシート3の情報が入ります。</p>
+        </div>
     </div>
 
     <script src="otherjs.js"></script>
+    <script>
+        let sheetCount = 3; // 初期シート数
+        let activeSheet = 0;
 
+      
+
+        // シートを追加する関数
+        function addSheet() {
+            sheetCount++;
+
+            // タブを追加
+            let tabContainer = document.querySelector(".tab-container");
+            let newTab = document.createElement("button");
+            newTab.classList.add("tab");
+            newTab.textContent = `シート${sheetCount}`;
+            newTab.onclick = () => switchSheet(sheetCount - 1);
+            tabContainer.insertBefore(newTab, tabContainer.lastElementChild);
+
+            // シートを追加
+            let sheetContainer = document.getElementById("sheet-container");
+            let newSheet = document.createElement("div");
+            newSheet.id = `sheet${sheetCount}`;
+            newSheet.classList.add("sheet");
+
+            // シート名と削除ボタン
+            let sheetName = prompt("新しいシートの名前を入力してください");
+            newSheet.innerHTML = `
+                <h2>${sheetName || "新しいシート"}</h2>
+                <p>ここにシート${sheetCount}の情報が入ります。</p>
+                <span class="delete-btn" onclick="deleteSheet(${sheetCount})">削除</span>
+            `;
+            sheetContainer.appendChild(newSheet);
+
+            // 最後に追加されたシートを表示
+            switchSheet(sheetCount - 1);
+        }
+
+        // シートを削除する関数
+        function deleteSheet(sheetNumber) {
+            if (sheetNumber === 1) return; // 最初のシートは削除できないようにする
+
+            // タブとシートを削除
+            document.getElementById(`sheet${sheetNumber}`).remove();
+            document.querySelectorAll(".tab")[sheetNumber].remove();
+
+            // 現在のアクティブなシートが削除された場合、前のシートを表示
+            if (activeSheet === sheetNumber - 1) {
+                switchSheet(activeSheet - 1);
+            } else {
+                switchSheet(activeSheet);
+            }
+
+            sheetCount--;
+        }
+
+        // 初期シート表示
+        switchSheet(0);
+    </script>
 </body>
 </html>
