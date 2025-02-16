@@ -38,5 +38,29 @@ body {
 
 /* アクティブなシートを表示 */
 .sheet.active {
+    display: red;
+}
+
+.tab-container {
+    margin-bottom: 10px;
+}
+.tab {
+    margin-right: 5px;
+}
+.tab.active {
+    font-weight: bold;
+}
+.sheet {
+    display: none;
+}
+.sheet.active {
     display: block;
+}
+#sheet-container {
+    margin-top: 20px;
+}
+.delete-btn {
+    margin-left: 10px;
+    color: red;
+    cursor: pointer;
 }

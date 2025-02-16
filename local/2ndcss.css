@@ -1,0 +1,26 @@
+body {
+    font-family: Arial, sans-serif;
+}
+.tabs {
+    display: flex;
+    border-bottom: 2px solid green;
+    margin-bottom: 100px;
+}
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    background: #f1f1f1;
+    border: 1px solid #ccc;
+    margin-right: 5px;
+    border-bottom: none;
+}
+.tab.active {
+    background: white;
+    font-weight: bold;
+}
+.sheet {
+    display: none;
+}
+.sheet.active {
+    display: block;
+}
