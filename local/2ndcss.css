@@ -3,8 +3,8 @@ body {
 }
 .tabs {
     display: flex;
-    border-bottom: 2px solid green;
-    margin-bottom: 100px;
+    /*border-bottom: 5px solid green;*/
+    margin-bottom: 10px;
 }
 .tab {
     padding: 10px 20px;
@@ -24,3 +24,8 @@ body {
 .sheet.active {
     display: block;
 }
+
+.hidden {
+    display: none;
+  }
+  

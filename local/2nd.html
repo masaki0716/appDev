@@ -4,22 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>タブ切り替え</title>
-    <link rel="stylesheet" href="2ndcss.css"> 
+    <link rel="stylesheet" href="2ndcss.css">
 </head>
 <body>
 
-    <div class="tabs">
+    <!-- <div class="tabs">
         <div class="tab active" onclick="switchSheet(1)">Sheet 1</div>
         <div class="tab" onclick="switchSheet(2)">Sheet 2</div>
     </div>
 
     <div id="sheet1" class="sheet active">
         <h1>サンプル 1</h1>
+        <div class="tabs">
+            <div class="tab active" onclick="switchSheet(1)">Sheet 1</div>
+            <div class="tab" onclick="switchSheet(2)">Sheet 2</div>
+        </div>
     </div>
 
     <div id="sheet2" class="sheet">
         <h1>サンプル 2</h1>
     </div>
+    <script src="2ndjs.js"></script> -->
+
+    <!--  -->
+    <h1>サンプル</h1>
+    <h1>さん</h1>
+    <h2 id="タブ" data="1">その１</h2>
+    <h2 id="タブ" data="2">その２</h2>
+    <h2 id="タブ" data="3">その３</h2>
+    <button id="ぼたんid">押してみ</button>
+    <p id="re"></p>
+    <button id="toggleButton">表示切替</button>
+    <div id="content" class="hidden">ここに内容があります</div>
+
+
     <script src="2ndjs.js"></script>
 </body>
 </html>
