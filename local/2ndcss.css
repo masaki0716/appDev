@@ -2,12 +2,12 @@ body {
     font-family: Arial, sans-serif;
 }
 .tabs {
-    display: flex;
-    /*border-bottom: 5px solid green;*/
-    margin-bottom: 10px;
+    display:flex;
+    border-bottom: 10px solid green;
+    margin-bottom: 50px;
 }
 .tab {
-    padding: 10px 20px;
+    padding: 30px 70px;
     cursor: pointer;
     background: #f1f1f1;
     border: 1px solid #ccc;
@@ -15,7 +15,7 @@ body {
     border-bottom: none;
 }
 .tab.active {
-    background: white;
+    background:lightcyan;
     font-weight: bold;
 }
 .sheet {
@@ -27,5 +27,4 @@ body {
 
 .hidden {
     display: none;
-  }
-  
+}

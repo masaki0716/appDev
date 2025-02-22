@@ -8,34 +8,44 @@
 </head>
 <body>
 
-    <!-- <div class="tabs">
+    <div class="tabs">
         <div class="tab active" onclick="switchSheet(1)">Sheet 1</div>
         <div class="tab" onclick="switchSheet(2)">Sheet 2</div>
+        <div class="tab" onclick="switchSheet(3)">Sheet 3</div>
     </div>
 
     <div id="sheet1" class="sheet active">
-        <h1>サンプル 1</h1>
-        <div class="tabs">
-            <div class="tab active" onclick="switchSheet(1)">Sheet 1</div>
-            <div class="tab" onclick="switchSheet(2)">Sheet 2</div>
-        </div>
+        <h1>
+            <span id="ID" onclick="fun()">サンプル 1</span>
+            <span id="notID">ここから左</span>
+        </h1>
     </div>
 
     <div id="sheet2" class="sheet">
         <h1>サンプル 2</h1>
-    </div>
-    <script src="2ndjs.js"></script> -->
 
-    <!--  -->
-    <h1>サンプル</h1>
-    <h1>さん</h1>
-    <h2 id="タブ" data="1">その１</h2>
-    <h2 id="タブ" data="2">その２</h2>
-    <h2 id="タブ" data="3">その３</h2>
-    <button id="ぼたんid">押してみ</button>
-    <p id="re"></p>
-    <button id="toggleButton">表示切替</button>
-    <div id="content" class="hidden">ここに内容があります</div>
+
+
+
+
+
+
+        <h1>サンプル</h1>
+        <h1>さん</h1>
+        <h2 class="タブ アクティブ" data="1">その１</h2>
+        <h2 class="タブ" data="2">その２</h2>
+        <h2 class="タブ" data="3">その３</h2>
+        <button id="ぼたんid" onclick="アクティブ選択()">押してみ</button>
+        <p id="re"></p>
+        <p id="num">1</p>
+        <button id="numcoumt" onclick="num関数()">数字カウント</button>
+        <button id="toggleButton">表示切替</button>
+        <div id="content" class="hidden">ここに内容があります</div>
+    </div>
+
+    <div id="sheet3" class="sheet">
+        <h1>サンプル 3</h1>
+    </div>
 
 
     <script src="2ndjs.js"></script>
